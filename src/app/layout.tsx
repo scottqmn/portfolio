@@ -8,13 +8,13 @@ export const metadata: Metadata = {
     description: 'a developer based in Los Angeles, CA',
     openGraph: {
         type: 'website',
-        url: 'https://scottnguyen.dev',
+        url: 'https://www.scottnguyen.dev',
         title: 'Scott Nguyen',
         description: 'a developer based in Los Angeles, CA',
         siteName: 'Scott Nguyen',
         images: [
             {
-                url: 'https://example.com/og.png',
+                url: 'https://www.scottnguyen.dev/opengraph-image.png',
             },
         ],
     },
@@ -29,7 +29,7 @@ export default function RootLayout({
         <html lang='en'>
             <body
                 className={clsx(
-                    'bg-primary-100 min-h-screen',
+                    'min-h-screen bg-primary-100',
                     inter.variable,
                     playfairDisplay.variable,
                     sourceCodePro.variable
