@@ -6,6 +6,18 @@ import './globals.css';
 export const metadata: Metadata = {
     title: 'Scott Nguyen',
     description: 'a developer based in Los Angeles, CA',
+    openGraph: {
+        type: 'website',
+        url: 'https://scottnguyen.dev',
+        title: 'Scott Nguyen',
+        description: 'a developer based in Los Angeles, CA',
+        siteName: 'Scott Nguyen',
+        images: [
+            {
+                url: 'https://example.com/og.png',
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
