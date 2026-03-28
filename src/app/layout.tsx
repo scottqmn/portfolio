@@ -29,7 +29,7 @@ export default function RootLayout({
         <html lang='en'>
             <body
                 className={clsx(
-                    'min-h-screen bg-primary-100',
+                    'bg-primary-100 min-h-screen',
                     inter.variable,
                     playfairDisplay.variable,
                     sourceCodePro.variable

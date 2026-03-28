@@ -33,7 +33,7 @@ export const Pronunication: React.FC<PronunciationProps> = ({ text, src }) => {
             type='button'
             onClick={playPronunciation}
             aria-label='Play pronunciation'
-            className='border-primary-300 flex items-center gap-2 rounded-full border py-1 pl-2 pr-3'
+            className='border-primary-300 flex items-center gap-2 rounded-full border py-1 pr-3 pl-2'
         >
             <span className='text-primary-800 font-mono'>{text}</span>
             <HiSpeakerWave className='text-primary-500' aria-hidden='true' />
