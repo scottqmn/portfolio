@@ -4,6 +4,7 @@ import { inter, playfairDisplay, sourceCodePro } from '@/styles/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://www.scottnguyen.dev'),
     title: 'Scott Nguyen',
     description: 'a developer based in Los Angeles, CA',
     openGraph: {
