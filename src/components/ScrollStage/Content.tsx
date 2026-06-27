@@ -16,7 +16,7 @@ type ContentProps = {
 export const Content = ({ children, className }: ContentProps) => {
     return (
         <div
-            className={clsx('bg-primary-100 relative', className)}
+            className={clsx('bg-background relative', className)}
             style={{ marginTop: 'calc(-1 * var(--stage-gap, 50dvh))' }}
         >
             {children}

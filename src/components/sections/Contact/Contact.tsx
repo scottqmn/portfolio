@@ -15,7 +15,7 @@ export const Contact = () => {
                         href={href}
                         target='_blank'
                         rel='noreferrer'
-                        className='text-accent-600 hover:underline'
+                        className='text-accent hover:underline'
                     >
                         {label}
                     </a>

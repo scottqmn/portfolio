@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-const heading = cva('text-primary-800 font-serif', {
+const heading = cva('text-foreground font-serif', {
     variants: {
         size: {
             hero: 'text-4xl md:text-5xl',
@@ -12,7 +12,7 @@ const heading = cva('text-primary-800 font-serif', {
     },
 });
 
-const link = cva('text-accent-600 font-serif hover:underline', {
+const link = cva('text-accent font-serif hover:underline', {
     variants: {
         size: {
             hero: 'text-2xl md:text-3xl',
