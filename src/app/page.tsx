@@ -1,9 +1,9 @@
-import { DictionaryHero } from '@/components/DictionaryHero';
+import { Hero } from '@/components/sections';
 
 export default function Home() {
     return (
         <main>
-            <DictionaryHero />
+            <Hero />
         </main>
     );
 }
