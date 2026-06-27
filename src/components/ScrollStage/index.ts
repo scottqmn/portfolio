@@ -1,8 +1,10 @@
 import { Content } from './Content';
-import { Pinned } from './Pinned';
+import { PinnedEnd } from './PinnedEnd';
+import { PinnedStart } from './PinnedStart';
 import { ScrollStageRoot } from './ScrollStage';
 
 export const ScrollStage = Object.assign(ScrollStageRoot, {
-    Pinned,
+    PinnedStart,
     Content,
+    PinnedEnd,
 });

@@ -9,58 +9,47 @@ type ScrollStageRootProps = {
 };
 
 /**
- * Pins content in the vertical center of the viewport until the content below
- * scrolls up and collides with its bottom edge, then pushes it up and scrolls
- * normally.
+ * Pins content in the vertical center of the viewport using native
+ * `position: sticky` — no per-frame scroll handling.
  *
- * The pin, release and push are all native `position: sticky` behaviour — no
- * per-frame scroll handling. The root only measures the empty space below the
- * pinned content and exposes it as the `--stage-gap` CSS variable (recomputed
- * on resize and when the pinned content's size changes, e.g. a web-font swap).
- * `Pinned` and `Content` consume that variable to align the collision with the
- * pinned content's edge.
+ * - `PinnedStart` holds content centered from the top, until the content below
+ *   scrolls up, collides with its bottom edge, and pushes it away.
+ * - `PinnedEnd` is the inverse: it starts inline and, as the content above
+ *   scrolls past, catches in the center and stays there to the end.
+ * - `Content` is everything in between.
+ *
+ * PinnedStart sections measure their height and expose the surrounding gap as a CSS
+ * variable on the root (see {@link useStageGap}). The whole stage is hidden
+ * until that first measurement lands, so a refresh while scrolled down doesn't
+ * flash content positioned with the fallback gap.
  *
  * @example
  * <ScrollStage>
- *     <ScrollStage.Pinned>
+ *     <ScrollStage.PinnedStart>
  *         <Hero />
- *     </ScrollStage.Pinned>
+ *     </ScrollStage.PinnedStart>
  *     <ScrollStage.Content>
  *         <SelectedWork />
  *     </ScrollStage.Content>
+ *     <ScrollStage.PinnedEnd>
+ *         <Footer />
+ *     </ScrollStage.PinnedEnd>
  * </ScrollStage>
  */
 export const ScrollStageRoot = ({ children }: ScrollStageRootProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
-    const pinnedRef = useRef<HTMLDivElement>(null);
     const [ready, setReady] = useState(false);
 
     useEffect(() => {
-        const root = rootRef.current;
-        const pinnedEl = pinnedRef.current;
-        if (!root || !pinnedEl) return;
-
-        const update = () => {
-            const gap = Math.max(
-                0,
-                (window.innerHeight - pinnedEl.offsetHeight) / 2
-            );
-            root.style.setProperty('--stage-gap', `${gap}px`);
-        };
-
-        update();
-        setReady(true);
-        const observer = new ResizeObserver(update);
-        observer.observe(pinnedEl);
-        window.addEventListener('resize', update);
-        return () => {
-            observer.disconnect();
-            window.removeEventListener('resize', update);
-        };
+        // PinnedStart children measure their gaps in their own effects, which run
+        // before this one. Reveal on the next frame, once those measurements
+        // have been applied and painted.
+        const frame = requestAnimationFrame(() => setReady(true));
+        return () => cancelAnimationFrame(frame);
     }, []);
 
     return (
-        <ScrollStageContext.Provider value={{ pinnedRef }}>
+        <ScrollStageContext.Provider value={{ rootRef }}>
             <div
                 ref={rootRef}
                 className={clsx(

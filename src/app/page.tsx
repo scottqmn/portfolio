@@ -14,9 +14,9 @@ export default function Home() {
     return (
         <main>
             <ScrollStage>
-                <ScrollStage.Pinned>
+                <ScrollStage.PinnedStart>
                     <Hero />
-                </ScrollStage.Pinned>
+                </ScrollStage.PinnedStart>
                 <ScrollStage.Content>
                     <SelectedWork />
                     <Services />
@@ -24,8 +24,10 @@ export default function Home() {
                     <Testimonials />
                     <AboutNow />
                     <Contact />
-                    <Footer />
                 </ScrollStage.Content>
+                <ScrollStage.PinnedEnd>
+                    <Footer />
+                </ScrollStage.PinnedEnd>
             </ScrollStage>
         </main>
     );
