@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import clsx from 'clsx';
+import { useEffect, useRef, useState } from 'react';
 import { ScrollStageContext } from './context';
 
 type ScrollStageRootProps = {
@@ -32,6 +33,7 @@ type ScrollStageRootProps = {
 export const ScrollStageRoot = ({ children }: ScrollStageRootProps) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const pinnedRef = useRef<HTMLDivElement>(null);
+    const [ready, setReady] = useState(false);
 
     useEffect(() => {
         const root = rootRef.current;
@@ -47,6 +49,7 @@ export const ScrollStageRoot = ({ children }: ScrollStageRootProps) => {
         };
 
         update();
+        setReady(true);
         const observer = new ResizeObserver(update);
         observer.observe(pinnedEl);
         window.addEventListener('resize', update);
@@ -58,7 +61,15 @@ export const ScrollStageRoot = ({ children }: ScrollStageRootProps) => {
 
     return (
         <ScrollStageContext.Provider value={{ pinnedRef }}>
-            <div ref={rootRef}>{children}</div>
+            <div
+                ref={rootRef}
+                className={clsx(
+                    'transition-opacity duration-500',
+                    ready ? 'opacity-100' : 'opacity-0'
+                )}
+            >
+                {children}
+            </div>
         </ScrollStageContext.Provider>
     );
 };

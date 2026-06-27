@@ -17,7 +17,7 @@ export const Pinned = ({ children, className }: PinnedProps) => {
     const { pinnedRef } = useScrollStage();
 
     return (
-        <div style={{ height: 'calc(100dvh + var(--stage-gap, 50dvh))' }}>
+        <div className='h-[calc(100dvh+var(--stage-gap,50dvh))]'>
             <div
                 className={clsx(
                     'sticky top-0 flex h-dvh items-center justify-center',
