@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# portfolio
 
-## Getting Started
+Personal portfolio site — a static-export [Next.js](https://nextjs.org/) app
+(App Router, React 19, Tailwind v4), deployed to [Cloudflare Pages](https://pages.cloudflare.com/).
 
-First, run the development server:
+## Getting started
+
+Requires Node 26 (see `.nvmrc`) and [pnpm](https://pnpm.io/).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+nvm use          # Node 26
+pnpm install
+pnpm dev         # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Edit `src/app/page.tsx` to change the page; it auto-updates as you save.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Command          | Description                |
+| ---------------- | -------------------------- |
+| `pnpm dev`       | Start the dev server       |
+| `pnpm build`     | Static export to `out/`    |
+| `pnpm preview`   | Serve the built `out/`     |
+| `pnpm lint`      | ESLint                     |
+| `pnpm typecheck` | `tsc --noEmit`             |
+| `pnpm format`    | Prettier write             |
+| `pnpm clean`     | Remove `.next/` and `out/` |
 
-## Learn More
+## Deploy (Cloudflare Pages)
 
-To learn more about Next.js, take a look at the following resources:
+The site builds to a fully static `out/` directory (`next.config.mjs` →
+`output: 'export'`) and is served by Cloudflare Pages, configured in `wrangler.toml`
+(`pages_build_output_dir = "out"`).
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Build command:** `pnpm build`
+- **Output directory:** `out`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Cloudflare's Git integration builds and deploys on push to `main`. To deploy a local
+build manually:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm build
+pnpm dlx wrangler pages deploy out
+```
