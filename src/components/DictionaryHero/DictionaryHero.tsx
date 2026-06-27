@@ -1,6 +1,6 @@
 'use client';
 
-import { Pronunication } from '@/components/Pronunication';
+import { Pronunciation } from '@/components/Pronunciation';
 import { definitions, sentences } from './constants';
 
 export const DictionaryHero = () => {
@@ -21,7 +21,7 @@ export const DictionaryHero = () => {
                 </a>
             </div>
             <div>
-                <Pronunication
+                <Pronunciation
                     text='skɒt n(ə)ˈwin'
                     src='/audio/pronunciation.mp3'
                 />
