@@ -9,7 +9,7 @@ type PronunciationProps = {
     src?: string;
 };
 
-export const Pronunication: React.FC<PronunciationProps> = ({ text, src }) => {
+export const Pronunciation: React.FC<PronunciationProps> = ({ text, src }) => {
     const pronunciation = useMemo<Howl | undefined>(
         () => (src ? new Howl({ src }) : undefined),
         [src]

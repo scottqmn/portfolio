@@ -1,0 +1,5 @@
+# pnpm 11 config (not a monorepo workspace — no `packages:` key).
+# Explicit allowlist of dependencies permitted to run install/build scripts.
+allowBuilds:
+    sharp: true
+    unrs-resolver: true
