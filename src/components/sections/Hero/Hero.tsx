@@ -3,7 +3,7 @@ import { definitions, sentences } from './constants';
 
 export const Hero = () => {
     return (
-        <DictionaryEntry className='h-dvh justify-center'>
+        <DictionaryEntry>
             <DictionaryEntry.Heading
                 as='h1'
                 size='hero'
