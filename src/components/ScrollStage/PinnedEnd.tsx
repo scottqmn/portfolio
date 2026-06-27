@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import { useIsPinned } from './useIsPinned';
 import { useStageGap } from './useStageGap';
 
 type PinnedEndProps = {
@@ -18,13 +19,21 @@ type PinnedEndProps = {
  * document, so it pins later. The wrapper is pulled up by the measured gap so
  * the content above collides with the pinned content's top edge instead of the
  * empty space above it.
+ *
+ * Sets `data-pinned="true"` on the pinned element while it's centered, so styles
+ * can react with a Tailwind variant, e.g. `data-[pinned=true]:bg-...`.
  */
 export const PinnedEnd = ({ children, className }: PinnedEndProps) => {
     const contentRef = useStageGap('--stage-gap-end');
+    const { ref, isPinned } = useIsPinned('end');
 
     return (
-        <div className='-mt-(--stage-gap-end,0px) h-[calc(100dvh+var(--stage-gap-end,0px))]'>
+        <div
+            ref={ref}
+            className='-mt-(--stage-gap-end,0px) h-[calc(100dvh+var(--stage-gap-end,0px))]'
+        >
             <div
+                data-pinned={isPinned}
                 className={clsx(
                     'sticky top-0 flex h-dvh items-center justify-center',
                     className

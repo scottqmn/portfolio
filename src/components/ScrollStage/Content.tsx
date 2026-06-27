@@ -17,7 +17,7 @@ export const Content = ({ children, className }: ContentProps) => {
     return (
         <div
             className={clsx(
-                'bg-background relative -mt-(--stage-gap,0px)',
+                'bg-background relative z-10 -mt-(--stage-gap,0px)',
                 className
             )}
         >

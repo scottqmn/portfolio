@@ -25,7 +25,7 @@ export default function Home() {
                     <AboutNow />
                     <Contact />
                 </ScrollStage.Content>
-                <ScrollStage.PinnedEnd>
+                <ScrollStage.PinnedEnd className='opacity-0 transition-opacity duration-700 data-[pinned=true]:opacity-100'>
                     <Footer />
                 </ScrollStage.PinnedEnd>
             </ScrollStage>
