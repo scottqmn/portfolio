@@ -15,7 +15,7 @@ export const Hero = () => {
             />
             <DictionaryEntry.Pronunciation
                 text='skɒt n(ə)ˈwin'
-                src='/audio/pronunciation.mp3'
+                src='/audio/pronunciation-scott-nguyen.mp3'
             />
             <DictionaryEntry.Definitions items={definitions} />
             <DictionaryEntry.ExampleSentences items={sentences} />

@@ -1,14 +1,5 @@
 import { ScrollStage } from '@/components/ScrollStage';
-import {
-    AboutNow,
-    Contact,
-    Footer,
-    Hero,
-    SelectedWork,
-    Services,
-    Skills,
-    Testimonials,
-} from '@/components/sections';
+import { Footer, Hero, Employment, Projects } from '@/components/sections';
 
 export default function Home() {
     return (
@@ -18,12 +9,8 @@ export default function Home() {
                     <Hero />
                 </ScrollStage.PinnedStart>
                 <ScrollStage.Content>
-                    <SelectedWork />
-                    <Services />
-                    <Skills />
-                    <Testimonials />
-                    <AboutNow />
-                    <Contact />
+                    <Employment />
+                    <Projects />
                 </ScrollStage.Content>
                 <ScrollStage.PinnedEnd className='opacity-0 transition-opacity duration-700 data-[pinned=true]:opacity-100'>
                     <Footer />
