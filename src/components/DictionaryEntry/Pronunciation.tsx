@@ -9,7 +9,7 @@ type PronunciationProps = {
     src?: string;
 };
 
-export const Pronunication: React.FC<PronunciationProps> = ({ text, src }) => {
+export const Pronunciation: React.FC<PronunciationProps> = ({ text, src }) => {
     const pronunciation = useMemo<Howl | undefined>(
         () => (src ? new Howl({ src }) : undefined),
         [src]
@@ -22,8 +22,8 @@ export const Pronunication: React.FC<PronunciationProps> = ({ text, src }) => {
 
     if (!src) {
         return (
-            <div className='border-primary-300 flex items-center gap-2 rounded-full border px-2 py-1'>
-                <span className='text-primary-800 font-mono'>{text}</span>
+            <div className='border-border flex w-fit items-center gap-2 rounded-full border px-2 py-1'>
+                <span className='text-foreground font-mono'>{text}</span>
             </div>
         );
     }
@@ -33,10 +33,10 @@ export const Pronunication: React.FC<PronunciationProps> = ({ text, src }) => {
             type='button'
             onClick={playPronunciation}
             aria-label='Play pronunciation'
-            className='border-primary-300 flex items-center gap-2 rounded-full border py-1 pr-3 pl-2'
+            className='border-border flex w-fit items-center gap-2 rounded-full border py-1 pr-3 pl-2'
         >
-            <span className='text-primary-800 font-mono'>{text}</span>
-            <HiSpeakerWave className='text-primary-500' aria-hidden='true' />
+            <span className='text-foreground font-mono'>{text}</span>
+            <HiSpeakerWave className='text-foreground-muted' aria-hidden='true' />
         </button>
     );
 };

@@ -3,6 +3,9 @@ import prettier from 'eslint-config-prettier';
 import importX from 'eslint-plugin-import-x';
 
 const eslintConfig = [
+    {
+        ignores: ['out/**', '.next/**', 'node_modules/**'],
+    },
     ...coreWebVitals,
     prettier,
     {
