@@ -1,18 +1,13 @@
-// Placeholder content — replace with real copy.
 export const definitions = [
-    'to design and construct software from the ground up.',
-    'to make small tools and experiments to scratch an itch.',
+    'to design, assemble, and stand up software from scratch',
+    'to create something that did not exist the day before',
 ];
 
-// Example sentences grouped by inflected form of the headword.
-// Bold the project name when swapping in real copy.
 export const present = [
-    'Scott <em><strong>builds</strong></em> full-stack systems for a self-storage platform of 400+ stores — from <strong>AI customer-service agents</strong> across walk-in, phone, SMS, and web to the <strong>operations tooling</strong> that store managers run the business on.',
+    'Scott <em><strong>builds</strong></em> systems for a self-storage platform serving 400+ locations — from <strong>AI customer-service agents</strong> and <strong>self-service portals</strong> to the <strong>operations tooling</strong> store managers rely on to run the business.',
 ];
 
 export const past = [
     'Scott <em><strong>built</strong></em> <strong>Google Real-Time Content Insights</strong>, a newsroom analytics dashboard for the <strong>Google News Initiative</strong> that turns live audience data from Analytics, Trends, and YouTube into in-the-moment editorial decisions — giving publishers worldwide the insight to catch trending stories, deepen reader engagement, and act on opportunities as they emerge.',
-    'Scott <em><strong>built</strong></em> a customer self-service portal for <strong>StoreEase</strong> where renters reserve new units, make payments on current ones, and manage their accounts unassisted — clearing routine requests that would otherwise pull in a store manager or leasing representative.',
-    'Scott <em><strong>built</strong></em> a marketing site that cut load time by 40%.',
-    'Scott <em><strong>built</strong></em> a SaaS customer dashboard in three weeks.',
+    'Scott <em><strong>built</strong></em> the Jamstack foundations powering the <strong>UCLA</strong> centennial campaign and architecture firm <strong>NBBJ</strong>, CMS-driven systems that put animation-rich page composition in the hands of the people who own the content.',
 ];

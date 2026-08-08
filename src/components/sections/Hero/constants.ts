@@ -1,10 +1,10 @@
 export const definitions = [
-    'a web developer based in Los Angeles, CA',
-    'a human compiler, translating product team requests into functional code',
-    'a CSS craftsman, bridging the gap between creative visions and client-side realities',
+    'a senior software engineer based in Los Angeles, CA',
+    'a steady navigator, directing agents and guiding engineers to where the work needs to land',
+    'a human compiler, translating ambitious mockups into shippable features',
 ];
 
 export const sentences = [
-    '<em><strong>Scott Nguyen</strong></em> brings {{years}} years of professional experience to the table, with extensive expertise in modern web development tools such as React and Next.js.',
-    'Throughout his career, <em><strong>Scott</strong></em> has built enterprise applications and consumer-facing websites for users across the globe.',
+    '<em><strong>Scott Nguyen</strong></em> has spent {{years}} years taking enterprise tools and consumer products from concept to launch, reaching users around the globe.',
+    'A career delivering software lets <em><strong>Scott</strong></em> move efficiently through a rapidly evolving field, harnessing modern tooling without losing the fundamentals underneath.',
 ];
